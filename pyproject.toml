@@ -1,0 +1,77 @@
+[project]
+name = "renovate-test"
+version = "0.1.0"
+description = "Python package to test renovate"
+readme = "README.md"
+authors = [
+  {"name": "Hiroaki Hara(@Himalayan-wildcat)"},
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy~=1.11",
+    "pytest~=8.0",
+    "ruff~=0.8",
+]
+
+[tool.ruff]
+target-version = "py312"
+indent-width = 4
+line-length = 88
+exclude = [
+    "__init__.py",
+    ".venv",
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+]
+src = ["renovate_test", "tests"]
+
+[tool.ruff.format]
+docstring-code-format = true
+indent-style = "space"
+line-ending = "auto"
+
+[tool.ruff.lint]
+select = [
+    "D", # pydocstyle
+    "E", # pycodestyle error
+    "W", # pycodestyle warning
+    "F", # Pyflakes
+    "I", # isort
+]
+fixable = ["ALL"]
+ignore = [
+    "D100", # Missing docstring in public module.
+    "D104", # Missing docstring in public package.
+    "D105", # Missing docstring in magic method.
+    "D107", # Missing docstring in __init__.
+    "D203", # 1 blank line required before class docstring.
+    "D213", # Multi-line docstring summary should start at the second line.
+    "D205", # 1 blank line required between summary line and description.
+    "D400", # First line should end with a period.
+    "D415", # First line should end with a period, question mark, or exclamation point.
+    "D407", # Missing dashed underline after section.
+]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.per-file-ignores]
+"ccpoc/services/prompt.py" = ["E501"]
+"tests/unit/test_process.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+strict = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "--no-header -rA --tb=short -p no:cacheprovider"
+testpaths = ["tests"]
