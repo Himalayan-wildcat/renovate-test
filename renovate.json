@@ -4,6 +4,9 @@
     "config:best-practices",
     ":disableDependencyDashboard"
   ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "timezone": "Asia/Tokyo",
   "baseBranches": [
     "dev"
