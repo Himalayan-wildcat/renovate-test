@@ -5,7 +5,7 @@
     ":disableDependencyDashboard"
   ],
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": true
   },
   "timezone": "Asia/Tokyo",
   "baseBranches": [
