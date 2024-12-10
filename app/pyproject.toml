@@ -7,7 +7,10 @@ authors = [
   {"name" = "Hiroaki Hara(@Himalayan-wildcat)"},
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "avro>=1.11.0",
+    "langchain-core>=0.2.0",
+]
 
 [build-system]
 requires = ["hatchling"]
