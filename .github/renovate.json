@@ -9,7 +9,6 @@
   "baseBranches": ["dev"],
   "labels": ["deps"],
   "lockFileMaintenance": {"enabled": true},
-  "prCreation": "status-success",
   "packageRules": [
     {
       "matchManagers": ["terraform"],
@@ -39,10 +38,7 @@
       "matchUpdateTypes": ["major"]
     },
     {
-      "matchManagers": [
-        "github-actions",
-        "pyenv"
-      ],
+      "matchManagers": ["pyenv"],
       "enabled": false
     }
   ]
