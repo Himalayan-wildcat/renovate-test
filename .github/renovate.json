@@ -5,7 +5,7 @@
     ":disableDependencyDashboard"
   ],
   "timezone": "Asia/Tokyo",
-  "schedule": ["* */1 * * *"],
+  "schedule": ["0 */1 * * *"],
   "baseBranches": ["dev"],
   "labels": ["deps"],
   "lockFileMaintenance": {"enabled": true},
