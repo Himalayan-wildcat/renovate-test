@@ -5,11 +5,10 @@
     ":disableDependencyDashboard"
   ],
   "timezone": "Asia/Tokyo",
+  "schedule": ["*/5 * * * *"],
   "baseBranches": ["dev"],
   "labels": ["deps"],
-  "lockFileMaintenance": {
-    "enabled": true
-  },
+  "lockFileMaintenance": {"enabled": true},
   "prCreation": "status-success",
   "packageRules": [
     {
