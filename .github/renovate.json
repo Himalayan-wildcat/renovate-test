@@ -1,0 +1,49 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":disableDependencyDashboard"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["0 */1 * * *"],
+  "baseBranches": ["dev"],
+  "labels": ["deps"],
+  "lockFileMaintenance": {"enabled": true},
+  "prCreation": "status-success",
+  "packageRules": [
+    {
+      "matchManagers": ["terraform"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "TerraformNonMajorDependencies",
+      "automerge": true,
+      "enabled": false
+    },
+    {
+      "matchManagers": ["terraform"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchDepTypes": ["dependency-groups"],
+      "groupName": "PythonDevDependencies",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["project.dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "PythonDependencies",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["project.dependencies"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "matchManagers": [
+        "github-actions",
+        "pyenv"
+      ],
+      "enabled": false
+    }
+  ]
+}

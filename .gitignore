@@ -8,3 +8,14 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+terraform.tfstate.*.backup
+# logs
+*.log
+
+# Directories
+.terraform/
