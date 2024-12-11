@@ -1,8 +1,7 @@
 version = 1
 requires-python = ">=3.10"
 resolution-markers = [
-    "python_full_version < '3.12'",
-    "python_full_version >= '3.12' and python_full_version < '3.12.4'",
+    "python_full_version < '3.12.4'",
     "python_full_version >= '3.12.4'",
 ]
 
@@ -530,8 +529,8 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "avro", specifier = ">=1.12.0" },
-    { name = "langchain-core", specifier = ">=0.3.24" },
+    { name = "avro", specifier = ">=1.11.0" },
+    { name = "langchain-core", specifier = ">=0.2.0" },
 ]
 
 [package.metadata.requires-dev]
