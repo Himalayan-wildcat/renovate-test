@@ -1,11 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:best-practices",
-    ":disableDependencyDashboard"
-  ],
+  "extends": ["config:best-practices"],
+  "dependencyDashboard": false,
   "timezone": "Asia/Tokyo",
-  "schedule": ["* 7-8 * * *"],
+  "schedule": ["* 8-9 * * *"],
   "baseBranches": ["dev"],
   "labels": ["deps"],
   "lockFileMaintenance": {"enabled": true},
@@ -23,6 +21,10 @@
       "enabled": false
     },
     {
+      "matchManagers": ["pyenv"],
+      "enabled": false
+    },
+    {
       "matchDepTypes": ["dependency-groups"],
       "groupName": "PythonDevDependencies",
       "automerge": true
@@ -36,10 +38,6 @@
     {
       "matchDepTypes": ["project.dependencies"],
       "matchUpdateTypes": ["major"]
-    },
-    {
-      "matchManagers": ["pyenv"],
-      "enabled": false
     }
   ]
 }
