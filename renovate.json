@@ -4,14 +4,35 @@
     "config:best-practices",
     ":disableDependencyDashboard"
   ],
+  "timezone": "Asia/Tokyo",
+  "baseBranches": ["dev"],
+  "labels": ["deps"],
   "lockFileMaintenance": {
     "enabled": true
   },
-  "timezone": "Asia/Tokyo",
-  "baseBranches": [
-    "dev"
-  ],
-  "labels": [
-    "deps"
+  "prCreation": "status-success",
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["pyenv"],
+      "enabled": false
+    },
+    {
+      "matchDepTypes": ["dependency-groups"],
+      "groupName": "devDependencies",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["project.dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["project.dependencies"],
+      "matchUpdateTypes": ["major"]
+    }
   ]
 }
