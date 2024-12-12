@@ -6,7 +6,6 @@
   ],
   "dependencyDashboard": false,
   "timezone": "Asia/Tokyo",
-  "schedule": ["* 8-9 * * *"],
   "baseBranches": ["dev"],
   "labels": ["deps"],
   "lockFileMaintenance": {"enabled": true},
